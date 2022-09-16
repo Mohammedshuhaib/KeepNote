@@ -14,3 +14,14 @@ export const Registerschema = yup.object().shape({
     .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
 
 });
+
+export const Loginschema = yup.object().shape({
+    email: yup
+      .string()
+      .email("Must be a valid email")
+      .max(255)
+      .required("Email is required"),
+    password: yup
+      .string()
+      .required("No password provided.")
+  });
