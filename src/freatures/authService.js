@@ -67,10 +67,24 @@ const login = async (userData) => {
   return resposne.data;
 };
 
+const logout = async (userData) => {
+    const resposne = await axios(
+      {
+        method: "post",
+        url: `${process.env.REACT_APP_BASE_URL}/logout`,
+        withCredentials: true,
+      },
+      { withCredentials: true }
+    );
+  
+    return resposne.data;
+  };
+
 const authService = {
   register,
   submitOtp,
   login,
+  logout,
 };
 
 export default authService;

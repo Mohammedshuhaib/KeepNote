@@ -39,7 +39,7 @@ function Login() {
     if (isError) {
       toast.error(message);
     }
-    if (isLoginSuccess) {
+    if (isLoginSuccess || user) {
       navigate("/home");
     }
     dispatch(reset());
@@ -70,7 +70,7 @@ function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Sign in
           </Typography>
           <Box
             component="form"
