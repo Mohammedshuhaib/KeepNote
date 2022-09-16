@@ -39,9 +39,9 @@ function Login() {
     if (isError) {
       toast.error(message);
     }
-    // if (isLoginSuccess || user) {
-    //   navigate("/home");
-    // }
+    if (isLoginSuccess) {
+      navigate("/home");
+    }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch, isLoginSuccess]);
 

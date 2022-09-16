@@ -39,10 +39,6 @@ const submitOtp = async (otp) => {
     { withCredentials: true }
   );
 
-  if (response.data) {
-    localStorage.setItem("user", JSON.stringify(response.data));
-  }
-
   return response.data;
 };
 

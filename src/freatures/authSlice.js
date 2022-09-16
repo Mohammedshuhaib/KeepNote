@@ -94,7 +94,6 @@ export const authSlice = createSlice({
       .addCase(submitOtp.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.user = action.payload;
       })
       .addCase(submitOtp.rejected, (state, action) => {
         state.isLoading = false;
