@@ -16,7 +16,7 @@ import { Loginschema } from "../../validation/shema";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import {  reset } from "../../freatures/authSlice";
+import {  login, reset } from "../../freatures/authSlice";
 import Spinner from "../spinner/Spinner";
 
 function Login() {
@@ -31,11 +31,29 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const { user, isLoading, isError, isSuccess, message, isLoginSuccess } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    // if (isLoginSuccess || user) {
+    //   navigate("/home");
+    // }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch, isLoginSuccess]);
+
   const submitForm = async (data, event) => {
     setErr("");
     event.preventDefault();
-
+    dispatch(login(data))
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
