@@ -1,0 +1,22 @@
+main {
+  .header {
+    display: flex;
+    justify-content: end;
+
+    .addButton {
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 50px;
+      background: rgb(121, 121, 134);
+      border-radius: 8px;
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      padding: 8px;
+
+      &:hover {
+        background-color: rgb(85, 85, 91);
+      }
+    }
+  }
+}
