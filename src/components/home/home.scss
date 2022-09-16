@@ -11,12 +11,20 @@ main {
       background: rgb(121, 121, 134);
       border-radius: 8px;
       -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(124, 121, 121, 0.47);
       padding: 8px;
 
       &:hover {
         background-color: rgb(85, 85, 91);
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(31, 24, 24, 0.47);
+        box-shadow: 2px 4px 10px 1px rgba(65, 63, 63, 0.47);
       }
     }
+  }
+
+  .notpad {
+    display: flex;
+    justify-content: center;
+
   }
 }
