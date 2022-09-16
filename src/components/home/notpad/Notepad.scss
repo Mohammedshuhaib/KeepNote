@@ -1,5 +1,4 @@
 .noteContainer {
-    background: blue;
     height: 300px;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
     box-shadow: 2px 4px 10px 1px rgba(124, 121, 121, 0.47);
@@ -11,6 +10,15 @@
         box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
     }
 
+    .icon {
+        display: flex;
+        justify-content: end;
+        color: rgb(49, 39, 39);
+
+        &:hover{
+            color: rgb(0, 0, 0);
+        }
+    }
     .header {
         display: flex;
         justify-content: center;
