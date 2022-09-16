@@ -16,7 +16,7 @@ import { Registerschema } from "../../validation/shema";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { signup, reset, submitOtp } from "../../freatures/authSlice";
+import { signup, reset, submitOtp } from "../../freatures/auth/authSlice";
 import Spinner from "../spinner/Spinner";
 
 // import "./Signup.scss";

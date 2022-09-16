@@ -3,11 +3,13 @@ import "./home.scss";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import Notepad from "./notpad/Notepad";
 import { Grid } from "@mui/material";
-function home() {
+import { useNavigate } from "react-router-dom";
+function Home() {
+    const navigate = useNavigate();
   return (
     <main>
       <div className="header">
-        <div className="addButton">
+        <div className="addButton" onClick={() => navigate('/add')}>
           <PostAddIcon className="buttonIcon" />
         </div>
       </div>
@@ -21,4 +23,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;

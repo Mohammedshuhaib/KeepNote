@@ -16,7 +16,7 @@ import { Loginschema } from "../../validation/shema";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import {  login, reset } from "../../freatures/authSlice";
+import {  login, reset } from "../../freatures/auth/authSlice";
 import Spinner from "../spinner/Spinner";
 
 function Login() {
