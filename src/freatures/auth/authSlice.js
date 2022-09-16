@@ -112,9 +112,11 @@ export const authSlice = createSlice({
       })
       .addCase(submitOtp.pending, (state) => {
         state.isLoading = true;
+  
       })
       .addCase(submitOtp.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.isSuccess = true
         state.isLogoutSuccess = false;
         state.isLoginSuccess = false
       })

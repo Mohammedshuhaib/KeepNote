@@ -44,6 +44,9 @@ function Signup() {
     if( message == 'User already exist') {
       setSentOtp(false)
     }
+    if (isSuccess) {
+      navigate("/");
+    }
     
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
