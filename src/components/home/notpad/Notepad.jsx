@@ -4,8 +4,12 @@ import './Notepad.scss'
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { updateData } from '../../../freatures/note/noteSlice'
 function Notepad({data}) {
-
+  let navigate = useNavigate()
+  let dispatch = useDispatch()
   const deleteNote = async() => {
     try{
       await axios({
@@ -23,10 +27,14 @@ function Notepad({data}) {
   }
  
   return (
-    <Grid className='noteContainer' item sx={{'m':1,'p':5}} style={{'backgroundColor': data.color}} md={3} >
+    <Grid className='noteContainer' item sx={{'m':1,'p':5}} style={{'backgroundColor': data.color}} md={3}  >
        <div className="icon" onClick={deleteNote}>
         <DeleteIcon/>
        </div>
+       <div onClick={() => {
+        dispatch(updateData(data))
+        navigate('/editNotes')
+        }}>
        <div className="header">
         <h2>{data.title}</h2>
        </div>
@@ -38,6 +46,8 @@ function Notepad({data}) {
            {data.note}
         </p>
        </div>
+       </div>
+       
     </Grid>
   )
 }

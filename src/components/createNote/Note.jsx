@@ -22,15 +22,12 @@ function Note() {
   const dispatch = useDispatch();
 
   const { noteData, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
+    (state) => state.note
   );
 
   useEffect(() => {
     if (isError) {
       toast.error(message);
-    }
-    if (isSuccess) {
-      navigate("/home");
     }
     dispatch(reset());
   }, [noteData, isError, isSuccess, message, navigate, dispatch, isLoading]);

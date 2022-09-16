@@ -44,9 +44,7 @@ function Signup() {
     if( message == 'User already exist') {
       setSentOtp(false)
     }
-    if (isSuccess) {
-      navigate("/");
-    }
+    
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
@@ -62,6 +60,9 @@ function Signup() {
   const verifyOtp = async () => {
     setErr("");
     dispatch(submitOtp(otp));
+    if (isSuccess) {
+      navigate("/");
+    }
   };
 
   if (isLoading) {
