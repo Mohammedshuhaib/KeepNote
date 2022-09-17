@@ -18,7 +18,7 @@ const create = async (formData) => {
     if (err.response.data.status === 403) {
       await axios({
         method: "post",
-        url: `${process.env.REACT_APP_BASE_URL}/token`,
+        url: `${process.env.REACT_APP_BASE_URL}/api/token`,
         withCredentials: true,
       });
       create(formData);

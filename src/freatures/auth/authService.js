@@ -6,7 +6,7 @@ const register = async (userData) => {
   const response = await axios(
     {
       method: "post",
-      url: `${process.env.REACT_APP_BASE_URL}/register`,
+      url: `${process.env.REACT_APP_BASE_URL}/api/register`,
       data: {
         email: userData.email,
         password: userData.password,
@@ -27,7 +27,7 @@ const submitOtp = async (otp) => {
   const response = await axios(
     {
       method: "post",
-      url: `${process.env.REACT_APP_BASE_URL}/submitOtp`,
+      url: `${process.env.REACT_APP_BASE_URL}/api/submitOtp`,
       data: {
         otp,
       },
@@ -46,7 +46,7 @@ const login = async (userData) => {
   const resposne = await axios(
     {
       method: "post",
-      url: `${process.env.REACT_APP_BASE_URL}/login`,
+      url: `${process.env.REACT_APP_BASE_URL}/api/login`,
       data: {
         email: userData.email,
         password: userData.password,
@@ -67,7 +67,7 @@ const logout = async (userData) => {
     const resposne = await axios(
       {
         method: "post",
-        url: `${process.env.REACT_APP_BASE_URL}/logout`,
+        url: `${process.env.REACT_APP_BASE_URL}/api/logout`,
         withCredentials: true,
       },
       { withCredentials: true }
