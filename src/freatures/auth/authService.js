@@ -16,17 +16,14 @@ const register = async (userData) => {
     },
     { withCredentials: true }
   );
+  return response.data
 
-  if (response.data) {
-    localStorage.setItem("user", JSON.stringify(response.data));
-  }
-
-  return response.data;
 };
 
 // submit otp
 
 const submitOtp = async (otp) => {
+  
   const response = await axios(
     {
       method: "post",
@@ -38,7 +35,6 @@ const submitOtp = async (otp) => {
     },
     { withCredentials: true }
   );
-
   return response.data;
 };
 
